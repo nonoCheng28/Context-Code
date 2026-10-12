@@ -1,0 +1,10 @@
+# Keep source code and documentation in LF format.
+.gitattributes text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+
+# Preserve experimental files byte-for-byte (no newline conversion).
+*.txt -text
+*.json -text
+*.csv -text
+*.huff -text

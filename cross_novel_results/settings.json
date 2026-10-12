@@ -1,0 +1,31 @@
+{
+  "metric": "theoretical conditional cross-entropy, bits per evaluated character",
+  "orders": [
+    2,
+    3
+  ],
+  "alpha": 0.1,
+  "alphabet_size": 72,
+  "A": "Game of Thrones",
+  "B": "The Great Gatsby",
+  "input_sha256": {
+    "A": "aa739e316f6c64c1e59d5f65c42f3d0b69552535ee8a8f8bd6a4d69ed5f19774",
+    "B": "ac63f8eb546ea31be9b42c72f85a7441f07606cd976c08e12ccb95d98d14ee78"
+  },
+  "source_commit_B": "cf04165c84a11bc00bbbb9cceef936e0781740ae",
+  "evaluated_positions": "i=k,...,N-1; denominator N-k",
+  "smoothing": "(n_train(context,char)+alpha)/(n_train(context)+alpha*alphabet_size)",
+  "unseen_context": "uniform distribution over the shared alphabet",
+  "cost_exclusions": [
+    "first k characters",
+    "codebook/model storage",
+    "headers",
+    "bit packing"
+  ],
+  "self_evaluation": "in-sample self model with the same smoothing; not held-out generalization",
+  "identities_verified": [
+    "cross_entropy - empirical_entropy = conditional_KL",
+    "cross_entropy - self_cross_entropy = cross_KL - self_KL"
+  ],
+  "script_sha256": "f12bc27c8853a7c5289eedd98b860d0ffce0812c86d758b013b04eaf9a56d6fb"
+}
